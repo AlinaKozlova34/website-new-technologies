@@ -1,0 +1,19 @@
+header img {
+    height: 20vh;
+    width: 100vw;
+    position: relative;
+    object-fit: cover;
+}
+header span {
+    position: absolute;
+    top: 10vh;
+    left: 10vh;
+    font-size: x-large;
+    font-weight: bold;
+    color: aliceblue;
+}
+header input {
+    position: absolute;
+    top: 15vh;
+    right: 10vw;
+}
