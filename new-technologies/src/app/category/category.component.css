@@ -1,0 +1,20 @@
+.container {
+  padding-top: 40px;
+}
+
+div {
+  color: #14092B;
+  font-size: 24px;
+  font-family: RhodiumLibre;
+}
+
+.mat-flat-button{
+    height:132px !important;
+    width:220px !important;
+    font-size:48px !important;
+}
+
+.mat-tab {
+  height: 600px;
+
+}

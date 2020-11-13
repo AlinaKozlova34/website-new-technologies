@@ -1,0 +1,46 @@
+{
+  "pagination": {
+    "limit": 3,
+    "offset": 0,
+    "count": 3,
+    "total": 1069
+  },
+  "data": [
+    {
+      "author": null,
+      "title": "16 dead after Typhoon Goni batters Philippines",
+      "description": "The most powerful typhoon to hit the Philippines this year destroyed tens of thousands of homes and killed at least 16 people, officials said Monday, as communications to the worst-hit areas remained cut off.",
+      "url": "https://phys.org/news/2020-11-dead-typhoon-goni-batters-philippines.html",
+      "source": "Phys.org - News And Articles On Science And Technology",
+      "image": "https://scx1.b-cdn.net/csz/news/tmb/2020/2-thephilippin.jpg",
+      "category": "science",
+      "language": "en",
+      "country": "us",
+      "published_at": "2020-11-02T08:38:42+00:00"
+    },
+    {
+      "author": null,
+      "title": "20 years of life and science on the International Space Station - Livemint",
+      "description": "20 years of life and science on the International Space Station&nbsp;&nbsp;LivemintSpace station collaboration, astronauts aboard celebrate 20 years of human presence in orbit&nbsp;&nbsp;FirstpostSpace station marking 20 years of people living in orbit&nbsp;&nbsp;CGTNSpace station turns into world-class laboratory in 20 years&nbsp;&nbsp;Times of IndiaInternational Space Station Equivalent to World-Class Laboratory after 20 Years in Space&nbsp;&nbsp;News18View Full coverage on Google News",
+      "url": "https://news.google.com/__i/rss/rd/articles/CBMiiwFodHRwczovL2xpZmVzdHlsZS5saXZlbWludC5jb20vc21hcnQtbGl2aW5nL2lubm92YXRpb24vMjAteWVhcnMtb2YtbGlmZS1hbmQtc2NpZW5jZS1vbi10aGUtaW50ZXJuYXRpb25hbC1zcGFjZS1zdGF0aW9uLTExMTYwNDMwMTYyMjI4NS5odG1s0gGPAWh0dHBzOi8vbGlmZXN0eWxlLmxpdmVtaW50LmNvbS9hbXAvc21hcnQtbGl2aW5nL2lubm92YXRpb24vMjAteWVhcnMtb2YtbGlmZS1hbmQtc2NpZW5jZS1vbi10aGUtaW50ZXJuYXRpb25hbC1zcGFjZS1zdGF0aW9uLTExMTYwNDMwMTYyMjI4NS5odG1s?oc=5",
+      "source": "Google News Science IN",
+      "image": null,
+      "category": "science",
+      "language": "en",
+      "country": "in",
+      "published_at": "2020-11-02T08:38:06+00:00"
+    },
+    {
+      "author": null,
+      "title": "New research reports discovery of 5-million-year-old honey badger-like animal",
+      "description": "Five million years ago, dangerous carnivores—such as giant wolverines and otters, bears, sabertooth cats, and large hyaenids—prowled the West Coast of South Africa. Today we can confirm that, among them, fearlessly roamed a smaller relative of the living honey badger.",
+      "url": "https://phys.org/news/2020-11-discovery-million-year-old-honey-badger-like-animal.html",
+      "source": "Phys.org - News And Articles On Science And Technology",
+      "image": "https://scx1.b-cdn.net/csz/news/tmb/2020/23-newresearchr.jpg",
+      "category": "science",
+      "language": "en",
+      "country": "us",
+      "published_at": "2020-11-02T08:33:10+00:00"
+    }
+  ]
+}

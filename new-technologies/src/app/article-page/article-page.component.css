@@ -1,0 +1,51 @@
+.container {
+  padding-top: 40px;
+}
+
+header img {
+        height: 30vh;
+        width: 99vw;
+        position: relative;
+        object-fit: cover;
+    }
+header span {
+        position: absolute;
+        top: 15vh;
+        left: 10vh;
+        font-family: RhodiumLibre;
+        font-size: x-large;
+        font-weight: bold;
+        color: aliceblue;
+    }
+header input {
+        position: absolute;
+        top: 20vh;
+        right: 10vw;
+    }
+
+h1{
+  text-align: center;
+  font-family: RhodiumLibre;
+  color: black;
+  font-size: 40px;
+}
+
+div {
+  color: black;
+  font-size: 18px;
+  font-family: RhodiumLibre;
+  border: 2px solid  #6FA6D4; /* Толщина рамки в пикселах,
+                             тип границы (в данном случае сплошная линия) и
+                             цвет линии */
+   padding: 10px; /* Расстояние от текста до рамки */
+   width: 90vw;
+   margin: auto;
+   text-align: justify;
+}
+
+figure{
+font-size: 14px;
+font-family: RhodiumLibre;
+margin: auto;
+float: center;
+}

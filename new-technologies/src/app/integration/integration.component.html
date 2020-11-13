@@ -1,0 +1,33 @@
+<div>
+  Mediastack:
+
+</div>
+<ol>
+  <li *ngFor="let result of msdata">Article
+    <p>Author: {{result?.author}}</p>
+    <p>Title: {{result?.title}}</p>
+    <p>Description: {{result?.description}}</p>
+    <p>URL: {{result?.url}}</p>
+    <p>Source: {{result?.source}}</p>
+    <p>Image: {{result?.image}}</p>
+    <p>Category: {{result?.category}}</p>
+  </li>
+</ol>
+
+
+<div>
+  NewsCatcher:
+
+</div>
+<ol>
+  <li *ngFor="let result of ncdata">Article
+    <p>Author: {{result?.author}}</p>
+    <p>Title: {{result?.title}}</p>
+    <p>Description: {{result?.summary}}</p>
+    <p>URL: {{result?.link}}</p>
+    <p>Source: {{result?.clean_url}}</p>
+    <p>Image: {{result?.media}}</p>
+    <p>Category: {{result?.topic}}</p>
+  </li>
+</ol>
+
