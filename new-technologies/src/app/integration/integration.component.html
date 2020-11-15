@@ -3,7 +3,7 @@
 
 </div>
 <ol>
-  <li *ngFor="let result of msdata">Article
+  <li *ngFor="let result of data">Article
     <p>Author: {{result?.author}}</p>
     <p>Title: {{result?.title}}</p>
     <p>Description: {{result?.description}}</p>
@@ -11,6 +11,7 @@
     <p>Source: {{result?.source}}</p>
     <p>Image: {{result?.image}}</p>
     <p>Category: {{result?.category}}</p>
+    <p>Publication date: {{result?.publicationDate}}</p>
   </li>
 </ol>
 
@@ -20,14 +21,31 @@
 
 </div>
 <ol>
-  <li *ngFor="let result of ncdata">Article
+  <li *ngFor="let result of data2">Article
     <p>Author: {{result?.author}}</p>
     <p>Title: {{result?.title}}</p>
-    <p>Description: {{result?.summary}}</p>
-    <p>URL: {{result?.link}}</p>
-    <p>Source: {{result?.clean_url}}</p>
-    <p>Image: {{result?.media}}</p>
-    <p>Category: {{result?.topic}}</p>
+    <p>Description: {{result?.description}}</p>
+    <p>URL: {{result?.url}}</p>
+    <p>Source: {{result?.source}}</p>
+    <p>Image: {{result?.image}}</p>
+    <p>Category: {{result?.category}}</p>
+    <p>Publication date: {{result?.publicationDate}}</p>
   </li>
 </ol>
 
+<div>
+  All data:
+
+</div>
+<ol>
+  <li *ngFor="let result of all_data">Article
+    <p>Author: {{result?.author}}</p>
+    <p>Title: {{result?.title}}</p>
+    <p>Description: {{result?.description}}</p>
+    <p>URL: {{result?.url}}</p>
+    <p>Source: {{result?.source}}</p>
+    <p>Image: {{result?.image}}</p>
+    <p>Category: {{result?.category}}</p>
+    <p>Publication date: {{result?.publicationDate}}</p>
+  </li>
+</ol>
