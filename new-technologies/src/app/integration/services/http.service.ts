@@ -14,7 +14,7 @@ export class HttpService{
   date = new Date()
   currentDate: string
 
-  private mediastackUrl: string="http://api.mediastack.com/v1/news?access_key=030d3dc822b864c37f82b73d296f1b3e&limit=100&languages=en"
+  private mediastackUrl: string="http://api.mediastack.com/v1/news?access_key=&limit=100&languages=en"
   private newsCatcherUrl: string="https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=relevancy&lang=en"
 
   static previewInformationObserver: Subject<Data[]>=new Subject<Data[]>()
@@ -65,7 +65,7 @@ export class HttpService{
     }
     const headers = new HttpHeaders()
       .set("x-rapidapi-host", "newscatcher.p.rapidapi.com")
-      .set("x-rapidapi-key", "f7d3f8d7aemshde00e16303ecfbdp1f4520jsna7f2ed5a3ac1");
+      .set("x-rapidapi-key", "");
     return this.http.get<NewsCatcherData[]>(url, {params:params, headers: headers})
       .pipe(map(res => {
         let ncdata: NewsCatcherData[] = res["articles"];
