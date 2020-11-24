@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -12,6 +12,11 @@ import { CategoryComponent } from './category/category.component';
 import { InitializerComponent } from './initializer/initializer.component';
 import { IntegrationComponent } from './integration/integration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {Interceptor} from "./interceptor/interceptor";
+import {DatePipe} from "@angular/common";
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -22,15 +27,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InitializerComponent,
     IntegrationComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatTabsModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatButtonModule,
+        MatTabsModule,
+        FormsModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule
+    ],
+  providers: [
+    DatePipe,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    }
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

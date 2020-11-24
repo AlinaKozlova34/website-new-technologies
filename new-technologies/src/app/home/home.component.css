@@ -12,8 +12,15 @@ header span {
     font-weight: bold;
     color: aliceblue;
 }
-header input {
-    position: absolute;
-    top: 15vh;
-    right: 10vw;
+
+body search{
+  position: absolute;
+  top: 30vh;
+  right: 50vw;
+}
+
+h2{
+  font-family: RhodiumLibre;
+  color: black;
+  font-size: 14px;
 }

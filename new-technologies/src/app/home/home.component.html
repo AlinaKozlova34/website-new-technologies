@@ -5,17 +5,42 @@
       src="https://www.temenos.com/wp-content/uploads/2020/06/EIU-landscape.-altjpg.jpg"
     />
     <span>Browse new technologies</span>
-    <input />
+    <!--<div class="search">
+      <input type="text"  [(ngModel)] = 'query' />
+      <button (click)="applySearch()">Search</button>
+    </div>
+    <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="removeQuery()">
+      <mat-icon>close</mat-icon>
+    </button>-->
   </header>
   <body>
+  <div class="search">
+    <mat-form-field  appearance="standard">
+      <input matInput type="text" [(ngModel)]="query"/>
+      <button mat-button *ngIf="query" matSuffix mat-icon-button aria-label="Clear" (click)="removeQuery()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-button (click)="applySearch()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
   <app-category></app-category>
-    <h1>Category</h1>
-    Тут должен был быть api
+  <h2 *ngIf="freshData!=null && freshData.length==0">No results for query "{{query}}"</h2>
     <div class="ui link cards">
-      <div class="ui card">
+      <div class="ui card" *ngFor="let result of freshData">
         <div class="content">
-          <i class="right floated like icon"></i>
-          <i class="right floated star icon"></i>
+          <div class="header">{{result.title}}</div>
+          <div class="meta">{{result.publicationDate | date:'MM.dd.yy hh:mm'}}</div>
+          <div class="description">
+            <p>
+              {{result.description}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="ui card">
+        <div class="content">
           <div class="header">Cute Dog</div>
           <div class="meta">2 days ago</div>
           <div class="description">
@@ -26,21 +51,9 @@
             </p>
           </div>
         </div>
-        <div class="extra content">
-          <span class="left floated like">
-            <i class="like icon"></i>
-            Like
-          </span>
-          <span class="right floated star">
-            <i class="star icon"></i>
-            Favorite
-          </span>
-        </div>
       </div>
       <div class="ui card">
         <div class="content">
-          <i class="right floated like icon"></i>
-          <i class="right floated star icon"></i>
           <div class="header">Cute Dog</div>
           <div class="meta">2 days ago</div>
           <div class="description">
@@ -51,42 +64,9 @@
             </p>
           </div>
         </div>
-        <div class="extra content">
-          <span class="left floated like">
-            <i class="like icon"></i>
-            Like
-          </span>
-          <span class="right floated star">
-            <i class="star icon"></i>
-            Favorite
-          </span>
-        </div>
-      </div>
-      <div class="ui card">
-        <div class="content">
-          <i class="right floated like icon"></i>
-          <i class="right floated star icon"></i>
-          <div class="header">Cute Dog</div>
-          <div class="meta">2 days ago</div>
-          <div class="description">
-            <p>
-              Cute dogs come in a variety of shapes and sizes. Some cute dogs
-              are cute for their adorable faces, others for their tiny stature,
-              and even others for their massive size.
-            </p>
-          </div>
-        </div>
-        <div class="extra content">
-          <span class="left floated like">
-            <i class="like icon"></i>
-            Like
-          </span>
-          <span class="right floated star">
-            <i class="star icon"></i>
-            Favorite
-          </span>
-        </div>
-      </div>
+      </div>-->
     </div>
+  <!-- <app-integration></app-integration> -->
+
   </body>
 </html>
