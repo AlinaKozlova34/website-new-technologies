@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -13,6 +13,11 @@ import { InitializerComponent } from './initializer/initializer.component';
 import { IntegrationComponent } from './integration/integration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalNewsComponent } from './modal-news/modal-news.component';
+import { Interceptor } from './interceptor/interceptor';
+import { DatePipe } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,7 @@ import { ModalNewsComponent } from './modal-news/modal-news.component';
     CategoryComponent,
     InitializerComponent,
     IntegrationComponent,
-    ModalNewsComponent
+    ModalNewsComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +35,20 @@ import { ModalNewsComponent } from './modal-news/modal-news.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    FormsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    DatePipe,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

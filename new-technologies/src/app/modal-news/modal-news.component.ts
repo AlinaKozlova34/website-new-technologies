@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Data } from '../integration/models/data';
 
 @Component({
   selector: 'app-modal-news',
@@ -7,16 +8,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ModalNewsComponent implements OnInit {
   @Input() 
-  header: string;
-
-  @Input() 
-  description: string;
+  article: Data;
 	// @Output() isConfirmed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.header);
+    console.log(this.article);
     
   }
 

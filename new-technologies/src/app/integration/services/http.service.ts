@@ -1,12 +1,23 @@
 import { Injectable } from '@angular/core'
-import {HttpClient, HttpHeaders} from '@angular/common/http'
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http'
 import { Data } from '../models/data'
-import { forkJoin } from 'rxjs'
+import {forkJoin, Subject} from 'rxjs'
 import { Observable } from 'rxjs'
 import { map} from "rxjs/operators";
+import {NewsCatcherData} from "../models/newscatcherdata";
+import {MediastackData} from "../models/mediastackdata";
+import {DatePipe} from "@angular/common";
 
 @Injectable()
 export class HttpService{
+
+  date = new Date()
+  currentDate: string
+
+  private mediastackUrl: string="http://api.mediastack.com/v1/news?access_key=&limit=100&languages=en"
+  private newsCatcherUrl: string="https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=relevancy&lang=en"
+
+  static previewInformationObserver: Subject<Data[]>=new Subject<Data[]>()
 
   private _previewInformation: Data[];
 
@@ -16,14 +27,21 @@ export class HttpService{
 
   set previewInformation(value: Data[]){
     this._previewInformation=value;
+    HttpService.previewInformationObserver.next(value)
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private datePipe: DatePipe) {
+    this.currentDate = this.datePipe.transform(this.date, 'yyyy-MM-dd');
+  }
 
-  getMediastackData(url: string): Observable<Data[]>{
-    return this.http.get(url)
+  getMediastackData(url: string, isFresh: boolean = false): Observable<Data[]>{
+    let params=new HttpParams()
+    if(isFresh) {
+      params = params.set('date', `${this.currentDate}`)
+    }
+    return this.http.get<MediastackData[]>(url, {params:params})
       .pipe(map(res => {
-      let mdata = res["data"];
+      let mdata: MediastackData[] = res["data"];
       return mdata.map(function(data:any) {
         return {
           author: data.author,
@@ -39,14 +57,19 @@ export class HttpService{
     }))
   }
 
-  getNewsCatcherData(url: string): Observable<Data[]>{
+  getNewsCatcherData(url: string, isFresh: boolean = false): Observable<Data[]>{
+    let params=new HttpParams()
+    if(isFresh) {
+      params = params.append('from', `${this.currentDate}`)
+      params = params.append('to', `${this.currentDate}`)
+    }
     const headers = new HttpHeaders()
       .set("x-rapidapi-host", "newscatcher.p.rapidapi.com")
-      .set("x-rapidapi-key", "f7d3f8d7aemshde00e16303ecfbdp1f4520jsna7f2ed5a3ac1");
-    return this.http.get(url, {headers: headers})
+      .set("x-rapidapi-key", "");
+    return this.http.get<NewsCatcherData[]>(url, {params:params, headers: headers})
       .pipe(map(res => {
-        let ncdata = res["articles"];
-        return ncdata.map(function(data:any) {
+        let ncdata: NewsCatcherData[] = res["articles"];
+        return ncdata.map(function(data:NewsCatcherData) {
           return {
             author: data.author,
             title: data.title,
@@ -59,20 +82,22 @@ export class HttpService{
           };
         })
       }))
-}
+  }
 
-  getPreviewInformation(): Observable<Data[]>{
+  getPreviewInformation(isFresh: boolean = false): Observable<Data[]>{
     return forkJoin([
-      this.getMediastackData("http://api.mediastack.com/v1/news?access_key=030d3dc822b864c37f82b73d296f1b3e&categories=science&languages=en&limit=10&keywords=space"),
-      this.getMediastackData("http://api.mediastack.com/v1/news?access_key=030d3dc822b864c37f82b73d296f1b3e&categories=science&languages=en&limit=10&keywords=medicine"),
-      this.getMediastackData("http://api.mediastack.com/v1/news?access_key=030d3dc822b864c37f82b73d296f1b3e&categories=technology&languages=en&limit=10"),
-      this.getMediastackData("http://api.mediastack.com/v1/news?access_key=030d3dc822b864c37f82b73d296f1b3e&categories=entertainment&languages=en&date=2020-02-19&limit=10"),
-      this.getMediastackData("http://api.mediastack.com/v1/news?access_key=030d3dc822b864c37f82b73d296f1b3e&categories=technology&languages=en&date=2020-02-19&limit=10&keywords=programming"),
-      this.getMediastackData("http://api.mediastack.com/v1/news?access_key=030d3dc822b864c37f82b73d296f1b3e&categories=technology&languages=en&date=2020-02-19&limit=10&keywords=robot"),
-      this.getNewsCatcherData("https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=relevancy&lang=en&page=1&q=science"),
-      this.getNewsCatcherData("https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=relevancy&lang=en&page=1&q=robot"),
-      this.getNewsCatcherData("https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=relevancy&lang=en&page=1&q=space"),
-      this.getNewsCatcherData("https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=relevancy&lang=en&page=1&q=technology")
+      //this.getMediastackData('assets/mediastack.json'),
+      //this.getNewsCatcherData('assets/newscatcher.json'),
+      this.getMediastackData(`${this.mediastackUrl}&categories=science&keywords=space`, isFresh),
+      this.getMediastackData(`${this.mediastackUrl}&categories=science&keywords=medicine`, isFresh),
+      this.getMediastackData(`${this.mediastackUrl}&categories=technology`, isFresh),
+      this.getMediastackData(`${this.mediastackUrl}&categories=entertainment`, isFresh),
+      this.getMediastackData(`${this.mediastackUrl}&keywords=programming`, isFresh),
+      this.getMediastackData(`${this.mediastackUrl}&categories=technology&keywords=robot`, isFresh),
+      this.getNewsCatcherData(`${this.newsCatcherUrl}&q=science`, isFresh),
+      this.getNewsCatcherData(`${this.newsCatcherUrl}&q=robot`, isFresh),
+      this.getNewsCatcherData(`${this.newsCatcherUrl}&q=space`, isFresh),
+      this.getNewsCatcherData(`${this.newsCatcherUrl}&q=technology`, isFresh)
     ]).pipe(
       map(results => results.reduce((all, itm) => all.concat(itm), []))
     )
