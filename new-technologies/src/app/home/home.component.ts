@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryComponent } from'../category/category.component'
+import { ModalNewsComponent } from '../modal-news/modal-news.component'
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,7 @@ import { CategoryComponent } from'../category/category.component'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  items= ["awfs","dfdsf","dfjhnskhbfv", "gfdgdfg", "adsasd","sadaf"];
 
   constructor() { }
 

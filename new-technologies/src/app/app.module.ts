@@ -12,6 +12,7 @@ import { CategoryComponent } from './category/category.component';
 import { InitializerComponent } from './initializer/initializer.component';
 import { IntegrationComponent } from './integration/integration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalNewsComponent } from './modal-news/modal-news.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ArticlePageComponent,
     CategoryComponent,
     InitializerComponent,
-    IntegrationComponent
+    IntegrationComponent,
+    ModalNewsComponent
   ],
   imports: [
     BrowserModule,
