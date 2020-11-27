@@ -16,6 +16,7 @@
   <app-modal-news
     [article]="modalArticle"
     *ngIf="isModalShown"
+    (isClosed)="closeModal()"
   ></app-modal-news>
   <body>
     <div class="search">

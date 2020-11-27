@@ -9,7 +9,7 @@ import { Data } from '../integration/models/data';
 export class ModalNewsComponent implements OnInit {
   @Input() 
   article: Data;
-	// @Output() isConfirmed: EventEmitter<boolean> = new EventEmitter<boolean>();
+	@Output() isClosed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -17,6 +17,13 @@ export class ModalNewsComponent implements OnInit {
     console.log(this.article);
     
   }
+  hideModal(): void {
+    console.log("hideModal");
+    this.isClosed.emit(true);
 
+  }
 }
+
+
+
 

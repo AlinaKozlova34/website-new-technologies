@@ -47,4 +47,9 @@ export class HomeComponent implements OnInit {
     this.modalArticle = result;
     this.isModalShown = true;
   }
+  closeModal() {
+    console.log("closeModal");
+    
+    this.isModalShown = false;
+  }
 }

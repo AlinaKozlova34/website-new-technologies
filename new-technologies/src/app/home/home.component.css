@@ -1,26 +1,38 @@
+header {
+    top: 0;
+    left: 0;
+}
 header img {
-    height: 20vh;
-    width: 100vw;
-    position: relative;
-    object-fit: cover;
+  height: 20vh;
+  width: 100%;
+  position: relative;
+  object-fit: cover;
 }
 header span {
-    position: absolute;
-    top: 10vh;
-    left: 10vh;
-    font-size: x-large;
-    font-weight: bold;
-    color: aliceblue;
+  position: absolute;
+  top: 10vh;
+  left: 10vh;
+  font-size: x-large;
+  font-weight: bold;
+  color: aliceblue;
 }
 
-body search{
+body search {
   position: absolute;
   top: 30vh;
   right: 50vw;
 }
 
-h2{
+h2 {
   font-family: RhodiumLibre;
   color: black;
   font-size: 14px;
+}
+
+.cards {
+    width: 100%;
+    justify-content: space-around;
+}
+.card {
+    width: 30% !important;
 }
