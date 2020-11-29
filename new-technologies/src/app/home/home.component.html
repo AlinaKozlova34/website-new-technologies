@@ -5,22 +5,9 @@
       src="https://www.temenos.com/wp-content/uploads/2020/06/EIU-landscape.-altjpg.jpg"
     />
     <span>Browse new technologies</span>
-    <!--<div class="search">
-      <input type="text"  [(ngModel)] = 'query' />
-      <button (click)="applySearch()">Search</button>
-    </div>
-    <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="removeQuery()">
-      <mat-icon>close</mat-icon>
-    </button>-->
-  </header>
-  <app-modal-news
-    [article]="modalArticle"
-    *ngIf="isModalShown"
-    (isClosed)="closeModal()"
-  ></app-modal-news>
-  <body>
     <div class="search">
-      <mat-form-field appearance="standard">
+      <mat-form-field appearance="outline">
+        <mat-label color="white">Search</mat-label>
         <input matInput type="text" [(ngModel)]="query" />
         <button
           mat-button
@@ -37,7 +24,14 @@
         <mat-icon>search</mat-icon>
       </button>
     </div>
-    <app-category></app-category>
+  </header>
+  <app-modal-news
+    [article]="modalArticle"
+    *ngIf="isModalShown"
+    (isClosed)="closeModal()"
+  ></app-modal-news>
+  <body>
+    <app-category (dataChanged)="dataChangeHandler($event)" ></app-category>
     <h2 *ngIf="freshData != null && freshData.length == 0">
       No results for query "{{ query }}"
     </h2>

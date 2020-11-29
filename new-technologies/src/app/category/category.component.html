@@ -1,13 +1,12 @@
-<mat-tab-group style="height: 160px; width: 100%">
+<mat-tab-group style="height: 160px; width: 100%" (selectedTabChange)="onTabChanged($event)">
 
-  <mat-tab>
+  <mat-tab >
   <ng-template mat-tab-label>
     <img src="assets/img/home-svgrepo-com.svg" width="45" height="45">
     <div>Home</div>
   </ng-template>
   <h1>Latest news</h1>
   </mat-tab>
-
 
   <mat-tab>
     <ng-template mat-tab-label>

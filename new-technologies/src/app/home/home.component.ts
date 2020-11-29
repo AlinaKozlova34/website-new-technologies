@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import { CategoryComponent } from '../category/category.component';
 import { ModalNewsComponent } from '../modal-news/modal-news.component';
 import { Data } from '../integration/models/data';
@@ -16,6 +16,15 @@ export class HomeComponent implements OnInit {
   query: string;
   isModalShown: boolean;
   modalArticle: Data;
+
+  currentCategory: string
+  @ViewChild(CategoryComponent) viewChild: CategoryComponent
+
+  dataChangeHandler(data) {
+    console.log(data)
+    this.currentCategory=data
+  }
+
   constructor(private httpService: HttpService) {
     this.isModalShown = false;
     this.modalArticle = null;
@@ -49,7 +58,7 @@ export class HomeComponent implements OnInit {
   }
   closeModal() {
     console.log("closeModal");
-    
+
     this.isModalShown = false;
   }
 }
