@@ -13,7 +13,8 @@
   /* Отцентрированный даилог с тенью */
   z-index: 10000;
   position: fixed;
-  width: 50vw;
+  width: 70vw;
+  /* height: 20vh; */
 
   /* Центрирование */
   top: 50%;
@@ -28,7 +29,7 @@
 .ng-modal-dialog-content {
   padding: 10px;
   text-align: left;
-  max-height: 60vh;
+  max-height: 90vh;
   overflow-y: scroll;
 }
 .ng-modal-close {

@@ -1,4 +1,10 @@
-import {Component, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { CategoryComponent } from '../category/category.component';
 import { ModalNewsComponent } from '../modal-news/modal-news.component';
 import { Data } from '../integration/models/data';
@@ -16,13 +22,15 @@ export class HomeComponent implements OnInit {
   query: string;
   isModalShown: boolean;
   modalArticle: Data;
+  categoryData: Data[];
 
-  currentCategory: string
-  @ViewChild(CategoryComponent) viewChild: CategoryComponent
+  currentCategory = "all"
+  @ViewChild(CategoryComponent) viewChild: CategoryComponent;
 
   dataChangeHandler(data) {
-    console.log(data)
-    this.currentCategory=data
+    console.log(data);
+    this.currentCategory = data;
+    this.filterCategory(data);
   }
 
   constructor(private httpService: HttpService) {
@@ -33,10 +41,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.httpService.getPreviewInformation(true).subscribe((value) => {
       this.freshData = value;
+      this.filterCategory(this.currentCategory);
+
     });
     HttpService.previewInformationObserver.subscribe((value) => {
       this.freshData = value;
       this.tmpData = value;
+      this.filterCategory(this.currentCategory);
     });
   }
 
@@ -57,8 +68,19 @@ export class HomeComponent implements OnInit {
     this.isModalShown = true;
   }
   closeModal() {
-    console.log("closeModal");
+    console.log('closeModal');
 
     this.isModalShown = false;
+  }
+
+  filterCategory(category) {
+    if (category =="all") [
+      this.categoryData = this.freshData
+    ]
+    else {
+    this.categoryData = this.freshData.filter((article:Data) => {
+      return (article.category == category)
+    });
+  }
   }
 }

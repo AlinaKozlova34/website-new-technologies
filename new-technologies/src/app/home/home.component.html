@@ -32,13 +32,13 @@
   ></app-modal-news>
   <body>
     <app-category (dataChanged)="dataChangeHandler($event)" ></app-category>
-    <h2 *ngIf="freshData != null && freshData.length == 0">
-      No results for query "{{ query }}"
+    <h2 *ngIf="categoryData != null && categoryData.length == 0">
+      No results for query "{{ query }}" in category {{ currentCategory }}
     </h2>
     <div class="ui link cards">
       <div
         class="ui card"
-        *ngFor="let result of freshData"
+        *ngFor="let result of categoryData"
         (click)="onCardClick(result)"
       >
         <div class="content">
