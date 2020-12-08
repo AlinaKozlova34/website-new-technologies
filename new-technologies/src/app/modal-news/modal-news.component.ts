@@ -7,20 +7,21 @@ import { Data } from '../integration/models/data';
   styleUrls: ['./modal-news.component.css']
 })
 export class ModalNewsComponent implements OnInit {
-  @Input() 
+  @Input()
   article: Data;
-	@Output() isClosed: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+	@Output()
+  isClosed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.article);
-    
   }
+
   hideModal(): void {
     console.log("hideModal");
     this.isClosed.emit(true);
-
   }
 }
 

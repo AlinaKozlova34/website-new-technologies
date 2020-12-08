@@ -13,13 +13,11 @@ export class Interceptor implements HttpInterceptor {
         if (err instanceof HttpErrorResponse) {
           errorMessage = `Error ${err.status}: ${err.url} ${err.statusText}`;
           // Handle your 404 here
-          console.log('An error occurred:', err)
-          window.alert(errorMessage)
-
+          console.log('An error occurred:', err);
+          window.alert(errorMessage);
           return throwError(err);
         }
-      }
-      ))
+      }));
   }
 
 }

@@ -9,15 +9,15 @@ import {MediastackData} from "../models/mediastackdata";
 import {DatePipe} from "@angular/common";
 
 @Injectable()
-export class HttpService{
+export class HttpService {
 
-  date = new Date()
-  currentDate: string
+  date = new Date();
+  currentDate: string;
 
-  private mediastackUrl: string="http://api.mediastack.com/v1/news?access_key=&limit=100&languages=en"
-  private newsCatcherUrl: string="https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=relevancy&lang=en"
+  private mediastackUrl = 'http://api.mediastack.com/v1/news?access_key=&limit=100&languages=en';
+  private newsCatcherUrl = 'https://newscatcher.p.rapidapi.com/v1/search?media=True&sort_by=relevancy&lang=en';
 
-  static previewInformationObserver: Subject<Data[]>=new Subject<Data[]>()
+  static previewInformationObserver: Subject<Data[]> = new Subject<Data[]>(); //попробовать убрать static и использовать BehaviorSubject или ReplaySubject
 
   private _previewInformation: Data[];
 
@@ -26,20 +26,20 @@ export class HttpService{
   }
 
   set previewInformation(value: Data[]){
-    this._previewInformation=value;
-    HttpService.previewInformationObserver.next(value)
+    this._previewInformation = value;
+    HttpService.previewInformationObserver.next(value);
   }
 
   constructor(private http: HttpClient, private datePipe: DatePipe) {
-    this.currentDate = this.datePipe.transform(this.date, 'yyyy-MM-dd');
+    this.currentDate = this.datePipe.transform(this.date, 'yyyy-MM-dd'); //вынести в глобальную переменную
   }
 
   getMediastackData(url: string, isFresh: boolean = false): Observable<Data[]>{
-    let params=new HttpParams()
-    if(isFresh) {
-      params = params.set('date', `${this.currentDate}`)
+    let params = new HttpParams();
+    if (isFresh) {
+      params = params.set('date', `${this.currentDate}`);
     }
-    return this.http.get<MediastackData[]>(url, {params:params})
+    return this.http.get<MediastackData[]>(url, {params: params})
       .pipe(map(res => {
       let mdata: MediastackData[] = res["data"];
       return mdata.map(function(data:any) {
@@ -58,17 +58,17 @@ export class HttpService{
   }
 
   getNewsCatcherData(url: string, isFresh: boolean = false): Observable<Data[]>{
-    let params=new HttpParams()
+    let params = new HttpParams();
     if(isFresh) {
-      params = params.append('from', `${this.currentDate}`)
-      params = params.append('to', `${this.currentDate}`)
+      params = params.append('from', `${this.currentDate}`);
+      params = params.append('to', `${this.currentDate}`);
     }
     const headers = new HttpHeaders()
-      .set("x-rapidapi-host", "newscatcher.p.rapidapi.com")
+      .set("x-rapidapi-host", "newscatcher.p.rapidapi.com");
       .set("x-rapidapi-key", "");
-    return this.http.get<NewsCatcherData[]>(url, {params:params, headers: headers})
+    return this.http.get<NewsCatcherData[]>(url, {params: params, headers: headers})
       .pipe(map(res => {
-        let ncdata: NewsCatcherData[] = res["articles"];
+        const ncdata: NewsCatcherData[] = res["articles"];
         return ncdata.map(function(data:NewsCatcherData) {
           return {
             author: data.author,
@@ -80,8 +80,8 @@ export class HttpService{
             category: data.topic,
             publicationDate: data.published_date
           };
-        })
-      }))
+        });
+      }));
   }
 
   getPreviewInformation(isFresh: boolean = false): Observable<Data[]>{

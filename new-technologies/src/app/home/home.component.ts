@@ -5,10 +5,10 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { CategoryComponent } from '../category/category.component';
-import { ModalNewsComponent } from '../modal-news/modal-news.component';
-import { Data } from '../integration/models/data';
-import { HttpService } from '../integration/services/http.service';
+import {CategoryComponent} from '../category/category.component';
+import {ModalNewsComponent} from '../modal-news/modal-news.component';
+import {Data} from '../integration/models/data';
+import {HttpService} from '../integration/services/http.service';
 
 @Component({
   selector: 'app-home',
@@ -20,18 +20,12 @@ export class HomeComponent implements OnInit {
   tmpData: Data[];
   freshData: Data[];
   query: string;
-  isModalShown: boolean;
+  isModalShown: boolean; //todo переименовать
   modalArticle: Data;
   categoryData: Data[];
 
-  currentCategory = "all"
+  currentCategory = 'all';
   @ViewChild(CategoryComponent) viewChild: CategoryComponent;
-
-  dataChangeHandler(data) {
-    console.log(data);
-    this.currentCategory = data;
-    this.filterCategory(data);
-  }
 
   constructor(private httpService: HttpService) {
     this.isModalShown = false;
@@ -51,36 +45,44 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  dataChangeHandler(data): void {
+    console.log(data);
+    this.currentCategory = data;
+    this.filterCategory(data);
+  }
+
   applySearch(): void {
-    let str: string[] = this.query.split(/\s+/);
-    for (let i = 0; i < str.length; i++) {
+    const str: string[] = this.query.split(/\s+/);
+    for (let i = 0; i < str.length; i++) { //todo forEach
       this.freshData = this.freshData.filter((res) => {
         return res.title.toLocaleLowerCase().match(str[i].toLocaleLowerCase());
       });
     }
   }
+
   removeQuery(): void {
     this.query = '';
     this.freshData = this.tmpData;
   }
-  onCardClick(result) {
+
+  onCardClick(result): void {
     this.modalArticle = result;
     this.isModalShown = true;
   }
-  closeModal() {
+
+  closeModal(): void {
     console.log('closeModal');
 
     this.isModalShown = false;
   }
 
-  filterCategory(category) {
-    if (category =="all") [
-      this.categoryData = this.freshData
-    ]
-    else {
-    this.categoryData = this.freshData.filter((article:Data) => {
-      return (article.category == category)
-    });
-  }
+  filterCategory(category): void {
+    if (category === 'all') {
+      this.categoryData = this.freshData;
+    } else {
+      this.categoryData = this.freshData.filter((article: Data) => {
+        return (article.category === category);
+      });
+    }
   }
 }

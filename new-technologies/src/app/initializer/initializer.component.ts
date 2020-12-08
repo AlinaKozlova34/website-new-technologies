@@ -13,7 +13,9 @@ export class InitializerComponent implements OnInit {
   constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
-    this.httpService.getPreviewInformation().subscribe(info => {this.httpService.previewInformation = info})
+    this.httpService.getPreviewInformation().subscribe(info => {
+      this.httpService.previewInformation = info;
+    });
   }
 
 }
