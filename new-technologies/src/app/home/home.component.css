@@ -12,6 +12,7 @@ header span {
   position: absolute;
   top: 10vh;
   left: 10vh;
+  font-family: RhodiumLibre;
   font-size: x-large;
   font-weight: bold;
   color: aliceblue;
@@ -50,28 +51,32 @@ h2 {
   font-size: 14px;
 }
 
-.cards {
+cdk-virtual-scroll-viewport {
+  height: 70vh;
+}
+  .cards {
     width: 100%;
     justify-content: space-around;
-}
-.card {
+  }
+
+  .card {
     width: 30% !important;
   }
-  
-  .description {
-    -ms-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -ms-line-clamp: 5;
-    -webkit-line-clamp: 5;
-    /* -webkit-line-clamp: 5 !important; */
-    line-clamp: 5;
-    display: -webkit-box;
-    display: box;
-    -webkit-box-orient: vertical;
-    box-orient: vertical;
-    word-wrap: break-word;
-    line-height: 19px;
-    font-size: 15px;
-    
+
+.description {
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -ms-line-clamp: 5;
+  -webkit-line-clamp: 5;
+  /* -webkit-line-clamp: 5 !important; */
+  line-clamp: 5;
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  word-wrap: break-word;
+  line-height: 19px;
+  font-size: 15px;
+
 }

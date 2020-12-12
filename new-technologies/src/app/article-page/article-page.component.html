@@ -1,19 +1,20 @@
-<header>
-  <img src="assets/img/header.jpg">
-  <input>
+<header routerLink="/">
+  <img
+    src="https://www.temenos.com/wp-content/uploads/2020/06/EIU-landscape.-altjpg.jpg"
+  />
+  <span>Browse new technologies</span>
 </header>
-<app-category></app-category>
-
-<div>
-  <h1>Space station turns into world-class laboratory in 20 years - The Rahnuma Daily</h1>
-  <figure style="width: 1024px">
+<app-category routerLink="/"></app-category>
+<div class="inborder">
+  <h1>{{data?.title}}</h1>
+  <!--<figure style="width: 1024px">
     <img src="https://www.therahnuma.com/wp-content/uploads/2019/03/d4d21e5f7f8b399530fae01e5741e5af.jpg" alt="" width="1024" height="683" srcset="https://www.therahnuma.com/wp-content/uploads/2019/03/d4d21e5f7f8b399530fae01e5741e5af.jpg 1024w, https://www.therahnuma.com/wp-content/uploads/2019/03/d4d21e5f7f8b399530fae01e5741e5af-300x200.jpg 300w, https://www.therahnuma.com/wp-content/uploads/2019/03/d4d21e5f7f8b399530fae01e5741e5af-768x512.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" />
     <figcaption>Elon Musk-owned SpaceX&#8217;s on Saturday
       successfully launched its unmanned Crew Dragon test flight to the
       International Space Station, in a &#8220;revolutionary step&#8221; to get
       humans to the Moon, Mars and beyond. PIc: NASA</figcaption>
-  </figure>
-  <p id="content"><strong>Washington, Nov 1 (IANS)</strong> As astronauts celebrate
+  </figure>-->
+  <!--<p id="content"><strong>Washington, Nov 1 (IANS)</strong> As astronauts celebrate
     the 20th anniversary of continuous human presence aboard the International Space
     Station (ISS) on Monday, NASA has said the orbiting laboratory has turned into a
     world-class facility for research which has conducted thousands of
@@ -41,11 +42,12 @@
     waste plastic and carbon dioxide filtration that are critical for long-duration
     missions on the lunar surface in the Artemis programme.</p>
   <p>November 2 marks two decades of continuous human presence on the orbiting
-    laboratory comprising 241 people across 64 crews.</p>
+    laboratory comprising 241 people across 64 crews.</p>-->
 
-  <p style="color: #42306A; font-size: 20px">Source: Google News Science IN</p>
-  <p style="font-size: 20px; color: #42306A">2020.11.09</p>
-  <p style="font-size: 20px; color: #42306A">Category: Science, Space</p>
+  <p style="color: #42306A; font-size: 20px">Source: {{data?.source}}</p>
+  <p style="font-size: 20px; color: #42306A">Author: {{data?.author}}</p>
+  <p style="font-size: 20px; color: #42306A">{{data?.publicationDate | date: "MM.dd.yy hh:mm" }}</p>
+  <p style="font-size: 20px; color: #42306A">Category: {{data?.category}}</p>
 </div>
 
 <h1 style="color: #42306A">Related Articles</h1>

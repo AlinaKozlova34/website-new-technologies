@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from './services/http.service'
+import { ArticleService } from './services/article.service'
 import { Data } from './models/data'
 
 @Component({
   selector: 'app-integration',
   templateUrl: './integration.component.html',
   styleUrls: ['./integration.component.css'],
-    providers: [ HttpService]
+    providers: [ ArticleService]
 })
 export class IntegrationComponent implements OnInit {
 
@@ -14,7 +14,7 @@ export class IntegrationComponent implements OnInit {
   data2: Data[]
   all_data: Data[]
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: ArticleService) {}
 
   ngOnInit(){
     this.httpService

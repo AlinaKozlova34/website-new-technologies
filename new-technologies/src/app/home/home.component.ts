@@ -5,16 +5,16 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import {CategoryComponent} from '../category/category.component';
+import {CategoriesComponent} from '../categories/categories.component';
 import {ModalNewsComponent} from '../modal-news/modal-news.component';
 import {Data} from '../integration/models/data';
-import {HttpService} from '../integration/services/http.service';
+import {ArticleService} from '../integration/services/article.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [HttpService],
+  providers: [ArticleService],
 })
 export class HomeComponent implements OnInit {
   tmpData: Data[];
@@ -25,9 +25,9 @@ export class HomeComponent implements OnInit {
   categoryData: Data[];
 
   currentCategory = 'all';
-  @ViewChild(CategoryComponent) viewChild: CategoryComponent;
+  @ViewChild(CategoriesComponent) viewChild: CategoriesComponent;
 
-  constructor(private httpService: HttpService) {
+  constructor(private httpService: ArticleService) {
     this.isModalShown = false;
     this.modalArticle = null;
   }
@@ -38,9 +38,8 @@ export class HomeComponent implements OnInit {
       this.filterCategory(this.currentCategory);
 
     });
-    HttpService.previewInformationObserver.subscribe((value) => {
+    this.httpService.previewInformationObserver.subscribe((value) => {
       this.freshData = value;
-      this.tmpData = value;
       this.filterCategory(this.currentCategory);
     });
   }
@@ -54,7 +53,7 @@ export class HomeComponent implements OnInit {
   applySearch(): void {
     const str: string[] = this.query.split(/\s+/);
     for (let i = 0; i < str.length; i++) { //todo forEach
-      this.freshData = this.freshData.filter((res) => {
+      this.categoryData = this.categoryData.filter((res) => {
         return res.title.toLocaleLowerCase().match(str[i].toLocaleLowerCase());
       });
     }
@@ -62,7 +61,7 @@ export class HomeComponent implements OnInit {
 
   removeQuery(): void {
     this.query = '';
-    this.freshData = this.tmpData;
+    this.categoryData = this.tmpData;
   }
 
   onCardClick(result): void {
@@ -72,7 +71,6 @@ export class HomeComponent implements OnInit {
 
   closeModal(): void {
     console.log('closeModal');
-
     this.isModalShown = false;
   }
 
@@ -80,9 +78,10 @@ export class HomeComponent implements OnInit {
     if (category === 'all') {
       this.categoryData = this.freshData;
     } else {
-      this.categoryData = this.freshData.filter((article: Data) => {
-        return (article.category === category);
+      this.categoryData = this.freshData.filter((article:Data) => {
+        return (article.category === category)
       });
+      this.tmpData = this.categoryData;
     }
   }
 }

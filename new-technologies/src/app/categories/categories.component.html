@@ -1,11 +1,10 @@
-<mat-tab-group style="height: 160px; width: 100%" (selectedTabChange)="onTabChanged($event)">
+<mat-tab-group style="height: 60px; width: 100%" (selectedTabChange)="onTabChanged($event)" >
 
-  <mat-tab >
-  <ng-template mat-tab-label>
+  <mat-tab id="mat-tab-home">
+  <ng-template mat-tab-label >
     <img src="assets/img/home-svgrepo-com.svg" width="45" height="45">
     <div>Home</div>
   </ng-template>
-  <h1>Latest news</h1>
   </mat-tab>
 
   <mat-tab>
@@ -13,7 +12,6 @@
       <img src="assets/img/science-chemistry-svgrepo-com.svg" width="50" height="50">
       <div>Science</div>
     </ng-template>
-    <h1>Category: Science</h1>
   </mat-tab>
 
   <mat-tab>
@@ -21,7 +19,6 @@
       <img src="assets/img/tv-player-entertainment-svgrepo-com.svg" width="50" height="50">
       <div>Entertainment</div>
     </ng-template>
-    <h1>Category: Entertainment</h1>
   </mat-tab>
 
   <mat-tab>
@@ -29,7 +26,6 @@
       <img src="assets/img/medicine-svgrepo-com.svg" width="50" height="50">
       <div>Medicine</div>
     </ng-template>
-    <h1>Category: Medicine</h1>
   </mat-tab>
 
   <mat-tab>
@@ -37,7 +33,6 @@
       <img src="assets/img/artificial-intelligence-svgrepo-com.svg" width="50" height="50">
       <div>Robotics</div>
     </ng-template>
-    <h1>Category: Robotics</h1>
   </mat-tab>
 
   <mat-tab>
@@ -45,7 +40,6 @@
       <img src="assets/img/coding-programming-language-svgrepo-com.svg" width="50" height="50">
       <div>Programming</div>
     </ng-template>
-    <h1>Category: Programming</h1>
   </mat-tab>
 
   <mat-tab>
@@ -53,7 +47,6 @@
       <img src="assets/img/space-ship-svgrepo-com.svg" width="50" height="50">
       <div>Space</div>
     </ng-template>
-    <h1>Category: Space</h1>
   </mat-tab>
 
 </mat-tab-group>

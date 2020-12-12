@@ -4,10 +4,10 @@ import {MatTabChangeEvent} from "@angular/material/tabs";
 
 @Component({
   selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.css']
 })
-export class CategoryComponent implements OnInit {
+export class CategoriesComponent implements OnInit {
 
   categories: string[] = ['all', 'science', 'entertainment', 'medicine', 'robotics', 'programming', 'space']
 
@@ -19,9 +19,9 @@ export class CategoryComponent implements OnInit {
   }
 
   onTabChanged($event: MatTabChangeEvent) : void {
-    let clickedIndex = $event.index
-    console.log("new category ", this.categories[clickedIndex])
-    this.dataChanged.emit(this.categories[clickedIndex])
+    let clickedIndex = $event.index;
+    console.log("new category ", this.categories[clickedIndex]);
+    this.dataChanged.emit(this.categories[clickedIndex]);
   }
 
 }

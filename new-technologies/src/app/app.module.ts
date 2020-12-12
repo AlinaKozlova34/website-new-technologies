@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ArticlePageComponent } from './article-page/article-page.component';
-import { CategoryComponent } from './category/category.component';
+import { CategoriesComponent } from './categories/categories.component';
 import { InitializerComponent } from './initializer/initializer.component';
 import { IntegrationComponent } from './integration/integration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,13 +18,15 @@ import { DatePipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {ScrollingModule} from "@angular/cdk/scrolling";
+import {ArticleService} from "./integration/services/article.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ArticlePageComponent,
-    CategoryComponent,
+    CategoriesComponent,
     InitializerComponent,
     IntegrationComponent,
     ModalNewsComponent,
@@ -40,6 +42,7 @@ import { MatInputModule } from '@angular/material/input';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    ScrollingModule,
   ],
   providers: [
     DatePipe,
@@ -48,6 +51,7 @@ import { MatInputModule } from '@angular/material/input';
       useClass: Interceptor,
       multi: true,
     },
+    ArticleService,
   ],
   bootstrap: [AppComponent],
 })

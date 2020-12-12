@@ -8,7 +8,7 @@
     <div class="search">
       <mat-form-field appearance="outline">
         <mat-label color="white">Search</mat-label>
-        <input matInput type="text" [(ngModel)]="query" />
+        <input matInput id="mat-input-search" type="text" [(ngModel)]="query" />
         <button
           mat-button
           *ngIf="query"
@@ -20,7 +20,7 @@
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
-      <button mat-button (click)="applySearch()">
+      <button mat-button id="mat-button-search" (click)="applySearch()">
         <mat-icon>search</mat-icon>
       </button>
     </div>
@@ -32,21 +32,22 @@
   ></app-modal-news>
   <body>
     <app-category (dataChanged)="dataChangeHandler($event)" ></app-category>
-    <h2 *ngIf="categoryData != null && categoryData.length == 0">
+    <h2 id="no-results" *ngIf="categoryData != null && categoryData.length == 0">
       No results for query "{{ query }}" in category {{ currentCategory }}
     </h2>
+    <cdk-virtual-scroll-viewport itemSize="30">
     <div class="ui link cards">
       <div
         class="ui card"
-        *ngFor="let result of categoryData"
+        *cdkVirtualFor="let result of categoryData"
         (click)="onCardClick(result)"
       >
         <div class="content">
-          <div class="header">{{ result.title }}</div>
+          <div class="header" [routerLink]="['/article', result.id]">{{ result.title }}</div>
           <div class="meta">
             {{ result.publicationDate | date: "MM.dd.yy hh:mm" }}
           </div>
-          <div class="description">
+          <div class="description" >
             <p>
               {{ result.description }}
             </p>
@@ -54,6 +55,7 @@
         </div>
       </div>
     </div>
+    </cdk-virtual-scroll-viewport>
     <!-- <app-integration></app-integration> -->
   </body>
 </html>
