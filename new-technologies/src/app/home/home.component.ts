@@ -5,10 +5,13 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import {CategoriesComponent} from '../categories/categories.component';
-import {ModalNewsComponent} from '../modal-news/modal-news.component';
-import {Data} from '../integration/models/data';
-import {ArticleService} from '../integration/services/article.service';
+import { CategoriesComponent } from '../categories/categories.component';
+import { ModalNewsComponent } from '../modal-news/modal-news.component';
+import { Data } from '../integration/models/data';
+import { ArticleService } from '../integration/services/article.service';
+import { LocalStorage } from '../local-storage';
+import { interval, Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -23,25 +26,44 @@ export class HomeComponent implements OnInit {
   isModalShown: boolean; //todo переименовать
   modalArticle: Data;
   categoryData: Data[];
-
+  subscription: Subscription;
   currentCategory = 'all';
   @ViewChild(CategoriesComponent) viewChild: CategoriesComponent;
+  storage: LocalStorage;
 
   constructor(private httpService: ArticleService) {
     this.isModalShown = false;
     this.modalArticle = null;
+    this.storage = new LocalStorage();
+    this.subscription = interval(1200000).subscribe(() => this.updateNews());
+  }
+
+  updateNews(): void {
+    console.log("Updating news")
+    this.httpService.previewInformationObserver
+      .pipe(first())
+      .subscribe((value) => {
+        this.storage.setItem('articles', JSON.stringify(value));
+        this.freshData = value;
+        this.filterCategory(this.currentCategory);
+      });
   }
 
   ngOnInit(): void {
-    this.httpService.getPreviewInformation(true).subscribe((value) => {
-      this.freshData = value;
+    this.freshData = JSON.parse(this.storage.getItem('articles'));
+    if (this.freshData == null || this.freshData.length == 0) {
+      this.httpService
+        .getPreviewInformation(true)
+        .pipe(first())
+        .subscribe((value) => {
+          this.storage.setItem('articles', JSON.stringify(value));
+          this.freshData = value;
+          this.filterCategory(this.currentCategory);
+        });
+    } else {
       this.filterCategory(this.currentCategory);
-
-    });
-    this.httpService.previewInformationObserver.subscribe((value) => {
-      this.freshData = value;
-      this.filterCategory(this.currentCategory);
-    });
+    }
+    this.updateNews()
   }
 
   dataChangeHandler(data): void {
@@ -78,8 +100,8 @@ export class HomeComponent implements OnInit {
     if (category === 'all') {
       this.categoryData = this.freshData;
     } else {
-      this.categoryData = this.freshData.filter((article:Data) => {
-        return (article.category === category)
+      this.categoryData = this.freshData.filter((article: Data) => {
+        return article.category === category;
       });
       this.tmpData = this.categoryData;
     }

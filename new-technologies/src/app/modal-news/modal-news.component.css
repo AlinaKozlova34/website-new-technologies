@@ -29,7 +29,7 @@
 .ng-modal-dialog-content {
   padding: 10px;
   text-align: left;
-  max-height: 90vh;
+  max-height: 70vh;
   overflow-y: scroll;
 }
 .ng-modal-close {
