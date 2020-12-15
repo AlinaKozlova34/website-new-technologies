@@ -28,7 +28,7 @@
 }
 .ng-modal-dialog-content {
   padding: 10px;
-  text-align: left;
+  text-align: center;
   max-height: 70vh;
   overflow-y: scroll;
 }
