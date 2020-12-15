@@ -3,6 +3,7 @@ import {CategoriesComponent} from '../categories/categories.component'
 import {ArticleService} from "../integration/services/article.service";
 import {Data} from "../integration/models/data";
 import {ActivatedRoute} from "@angular/router";
+import { LocalStorage } from '../local-storage';
 
 @Component({
   selector: 'app-article-page',
@@ -15,14 +16,18 @@ export class ArticlePageComponent implements OnInit {
   data: Data=null;
   id: string;
   url='';
+  storage: LocalStorage;
 
-  constructor(private httpService: ArticleService, private route: ActivatedRoute) { }
+  constructor(private httpService: ArticleService,  private route: ActivatedRoute) { 
+    this.storage = new LocalStorage();
+  }
 
 
   ngOnInit(): void {
     var text='';
     this.route.params.subscribe(params => {
       this.id = params['id'];
+      this.data = JSON.parse(this.storage.getItem('articles')).filter(item => item.id === this.id)[0]; 
       console.log(this.id);
     });
 
