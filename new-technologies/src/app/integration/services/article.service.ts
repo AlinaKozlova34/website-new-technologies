@@ -8,6 +8,7 @@ import {NewsCatcherData} from '../models/newscatcherdata';
 import {MediastackData} from '../models/mediastackdata';
 import {DatePipe} from "@angular/common";
 import { UUID } from 'angular2-uuid';
+import { NewsApiData } from '../models/newsapidata'
 
 @Injectable()
 export class ArticleService {
@@ -87,6 +88,26 @@ export class ArticleService {
       }));
   }
 
+  getNewsApiData(url): Observable<any>{
+    return this.http.get(url).pipe(map(result => {
+      const parsedResult: NewsApiData[] = result['articles']
+      return parsedResult.map( (data:NewsApiData) => {
+        return {
+          id: UUID.UUID(),
+          author: data.author,
+          title: data.title,
+          description: data.description,
+          url: data.url,
+          source: data.source.name,
+          image: data.ulrToImage,
+          category: 'medicine',
+          publicationDate: data.publishedAt
+        }
+      })
+    }));
+    
+  }
+
   getTextFromUrl(url: string): Observable<string>{
     return this.http.get<string>(url, {headers: { 'Access-Control-Allow-Origin': '*' }});
   }
@@ -94,7 +115,9 @@ export class ArticleService {
   getPreviewInformation(isFresh: boolean = false): Observable<Data[]>{
     return forkJoin([
       this.getMediastackData('assets/mediastack.json'),
-      this.getNewsCatcherData('assets/newscatcher.json')
+      this.getNewsCatcherData('assets/newscatcher.json'),
+      this.getNewsApiData('assets/newsapi.json')
+      // this.getNewsApiData('https://newsapi.org/v2/top-headlines?apiKey=7bd7a25addaa402e917380e409830d22&category=health')
       //this.getMediastackData(`${this.mediastackUrl}&categories=science&keywords=space`, isFresh),
       //this.getMediastackData(`${this.mediastackUrl}&categories=science&keywords=medicine`, isFresh),
       //this.getMediastackData(`${this.mediastackUrl}&categories=technology`, isFresh),

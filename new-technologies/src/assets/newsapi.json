@@ -1,0 +1,266 @@
+{
+    "status": "ok",
+    "totalResults": 2401,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "YouTube"
+            },
+            "author": null,
+            "title": "FDA to review Moderna vaccine Thursday - CBS 17",
+            "description": "Moderna says their vaccine is 94.5% effective and super cold storage is not needed, unlike the Pfizer vaccine.",
+            "url": "https://www.youtube.com/watch?v=-TLLEdnlR6s",
+            "urlToImage": "https://i.ytimg.com/vi/-TLLEdnlR6s/maxresdefault.jpg",
+            "publishedAt": "2020-12-15T10:46:36Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": "Kate Kelland",
+            "title": "New coronavirus strain spreading in UK has key mutations, scientists say - Reuters UK",
+            "description": "British scientists are trying to establish whether the rapid spread in southern England of a new variant of the virus that causes COVID-19 is linked to key mutations they have detected in the strain, they said on Tuesday.",
+            "url": "https://www.reuters.com/article/health-coronavirus-britain-variant-idUSKBN28P15E",
+            "urlToImage": "https://static.reuters.com/resources/r/?m=02&d=20201215&t=2&i=1544609496&r=LYNXMPEGBE0MB&w=800",
+            "publishedAt": "2020-12-15T10:39:00Z",
+            "content": "LONDON (Reuters) - British scientists are trying to establish whether the rapid spread in southern England of a new variant of the virus that causes COVID-19 is linked to key mutations they have dete… [+2682 chars]"
+        },
+        {
+            "source": {
+                "id": "globo",
+                "name": "Globo"
+            },
+            "author": null,
+            "title": "São Carlos registra mais de 5 mil casos de Covid-19 desde o início da pandemia - G1",
+            "description": "Vigilância Epidemiológica registrou 83 novos casos de Covid-19 na segunda-feira (14).",
+            "url": "https://g1.globo.com/sp/sao-carlos-regiao/noticia/2020/12/15/sao-carlos-registra-mais-de-5-mil-casos-de-covid-19-desde-o-inicio-da-pandemia.ghtml",
+            "urlToImage": "https://s2.glbimg.com/wUh1nXb1QLWIAluIifT2qBZptw8=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/5/1/ptv0CoThiLbl7vbeHnJQ/testecovid.jpg",
+            "publishedAt": "2020-12-15T10:39:00Z",
+            "content": "A Vigilância Epidemiológica de São Carlos (SP) registrou 83 novos casos de Covid-19 na segunda-feira (14). A cidade soma 5.002 casos desde o início da pandemia, com 67 mortes confirmadas e 95 descart… [+1805 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "country94.ca"
+            },
+            "author": "Allan Dearing",
+            "title": "NB COVID-19 Vaccination Clinics Announced - country94.ca",
+            "description": "The first shipment of the new Pfizer COVID-19 vaccine is expected to arrive in New Brunswick on Tuesday. The D...",
+            "url": "https://www.country94.ca/2020/12/15/n-b-covid-19-vaccination-clinics-announced/",
+            "urlToImage": "https://media.socastsrm.com/wordpress/wp-content/blogs.dir/1930/files/2019/02/46223212694_10bd6701a3.jpg",
+            "publishedAt": "2020-12-15T10:29:26Z",
+            "content": "The first shipment of the new Pfizer COVID-19 vaccine is expected to arrive in New Brunswick on Tuesday.\r\nThe Department of Health says a vaccination clinic is scheduled at the Miramichi Regional Hos… [+456 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "country94.ca"
+            },
+            "author": "Allan Dearing",
+            "title": "NB COVID-19 Vaccination Clinics Announced - country94.ca",
+            "description": "The first shipment of the new Pfizer COVID-19 vaccine is expected to arrive in New Brunswick on Tuesday. The D...",
+            "url": "https://www.country94.ca/2020/12/15/n-b-covid-19-vaccination-clinics-announced/",
+            "urlToImage": "https://media.socastsrm.com/wordpress/wp-content/blogs.dir/1930/files/2019/02/46223212694_10bd6701a3.jpg",
+            "publishedAt": "2020-12-15T10:29:26Z",
+            "content": "The first shipment of the new Pfizer COVID-19 vaccine is expected to arrive in New Brunswick on Tuesday.\r\nThe Department of Health says a vaccination clinic is scheduled at the Miramichi Regional Hos… [+456 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Maxisciences"
+            },
+            "author": "Amandine Fassoni",
+            "title": "Comment fonctionne un vaccin ? - Maxisciences",
+            "description": "Ils ont été une véritable prouesse scientifique mais quand on fait partie du grand public, on a parfois du mal à connaître le mode d'action d'un vaccin. Voici tout ce qu&…",
+            "url": "https://www.maxisciences.com/mourir-moins-con/comment-fonctionne-un-vaccin_art45157.html",
+            "urlToImage": "https://img.maxisciences.com/s3/fac/1280/mourir-moins-con/default_2020-09-17_0dfcb9a5-9dd5-4ae6-8cd1-a552414d33cc.jpeg",
+            "publishedAt": "2020-12-15T10:28:58Z",
+            "content": "Ils ont été une véritable prouesse scientifique mais quand on fait partie du grand public, on a parfois du mal à connaître le mode d'action d'un vaccin. Voici tout ce qu'il faut savoir, notamment dep… [+4799 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Www.jn.pt"
+            },
+            "author": "JN",
+            "title": "Incidência de gripe em Portugal continua praticamente zero - Jornal de Notícias",
+            "description": "Gripe está em níveis baixos e especialistas pedem que se pondere o uso de máscara na próxima temporada de influenza",
+            "url": "https://www.jn.pt/nacional/-incidencia-de-gripe-em-portugal-continua-praticamente-zero--13139838.html",
+            "urlToImage": "https://static.globalnoticias.pt/jn/image.aspx?brand=JN&type=generate&guid=3a4a12ab-5f1f-4212-a907-5b1a040ad84f&w=800&h=420&watermark=true&t=20201215102800",
+            "publishedAt": "2020-12-15T10:28:00Z",
+            "content": "Gripe está em níveis baixos e especialistas pedem que se pondere o uso de máscara na próxima temporada de influenza\r\nO último relatório do Instituto Nacional Ricardo Jorge (INSA) continua a registar … [+3245 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNN Philippines"
+            },
+            "author": null,
+            "title": "COVID-19 vaccine rollout was a moment of hope in pandemic's 'darkest days,' expert says. But the dark days aren't yet over - CNN Philippines",
+            "description": "All 50 states, Washington DC, and Puerto Rico received vaccine doses Monday. More shipments are expected through the rest of the week.",
+            "url": "http://cnnphilippines.com/world/2020/12/15/covid19-vaccine-united-states.html",
+            "urlToImage": "http://cnnphilippines.com/.imaging/mte/demo-cnn-new/750x450/dam/cnn/2020/12/15/Covid-19-vaccines_CNNPH.jpg/jcr:content/Covid-19-vaccines_CNNPH.jpg",
+            "publishedAt": "2020-12-15T10:23:21Z",
+            "content": "(CNN) For many Americans, Monday felt like a sigh of relief. After 10 nightmarish months, the first COVID-19 vaccinations began, a historic milestone in a brutal battle.\r\n\"I never would have imagined… [+8075 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Destinationsante.com"
+            },
+            "author": null,
+            "title": "Psoriasis : le renouvellement de la peau se dérègle - Sud Ouest",
+            "description": "Non contagieux, le psoriasis est dû à un dérèglement immunitaire qui entraîne une inflammation chronique et exagérée de la peau et une surproduction de",
+            "url": "https://destinationsante.com/psoriasis-le-renouvellement-de-la-peau-se-deregle.html",
+            "urlToImage": "https://destinationsante.com/wp-content/uploads/2020/12/Dragana-Gordic-shutterstock.jpg",
+            "publishedAt": "2020-12-15T10:20:04Z",
+            "content": "Le psoriasis est une dermatose, cest-à-dire à une affection de la peau, de nature inflammatoire. Caractérisée par des plaques rouges présentant des squames, elle concernerait entre 2% et 3% de la pop… [+1917 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Destinationsante.com"
+            },
+            "author": null,
+            "title": "Psoriasis : le renouvellement de la peau se dérègle - Sud Ouest",
+            "description": "Non contagieux, le psoriasis est dû à un dérèglement immunitaire qui entraîne une inflammation chronique et exagérée de la peau et une surproduction de",
+            "url": "https://destinationsante.com/psoriasis-le-renouvellement-de-la-peau-se-deregle.html",
+            "urlToImage": "https://destinationsante.com/wp-content/uploads/2020/12/Dragana-Gordic-shutterstock.jpg",
+            "publishedAt": "2020-12-15T10:20:04Z",
+            "content": "Le psoriasis est une dermatose, cest-à-dire à une affection de la peau, de nature inflammatoire. Caractérisée par des plaques rouges présentant des squames, elle concernerait entre 2% et 3% de la pop… [+1917 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "merkur.de"
+            },
+            "author": null,
+            "title": "Neues Corona-Medikament macht Coronaviren innerhalb von 24 Stunden unschädlich - kreiszeitung.de",
+            "description": "Bislang gibt es keine Corona-Medikamente, die oral eingenommen werden können. Das könnte sich aber schon bald ändern: Forscher erproben aktuell ein neues Präparat.",
+            "url": "https://www.merkur.de/leben/gesundheit/corona-medikament-gegen-grippe-coronaviren-uebertragung-stoppen-patienten-nicht-ansteckend-virenlast-zr-90127170.html",
+            "urlToImage": "https://www.merkur.de/bilder/2020/12/10/90127170/24462921-remdesivir-als-antivirales-breitspektrum-medikament-ist-ein-in-den-usa-japan-und-europa-zugelassenes-mittel-zur-behandlung-von-covid-19-patienten-1Tef.jpg",
+            "publishedAt": "2020-12-15T10:19:00Z",
+            "content": "Bislang gibt es keine Corona-Medikamente, die oral eingenommen werden können. Das könnte sich aber schon bald ändern: Forscher erproben aktuell ein neues Präparat. <ul><li>Es gibt in Deutschland bisl… [+3390 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "merkur.de"
+            },
+            "author": null,
+            "title": "Neues Corona-Medikament macht Coronaviren innerhalb von 24 Stunden unschädlich - kreiszeitung.de",
+            "description": "Bislang gibt es keine Corona-Medikamente, die oral eingenommen werden können. Das könnte sich aber schon bald ändern: Forscher erproben aktuell ein neues Präparat.",
+            "url": "https://www.merkur.de/leben/gesundheit/corona-medikament-gegen-grippe-coronaviren-uebertragung-stoppen-patienten-nicht-ansteckend-virenlast-zr-90127170.html",
+            "urlToImage": "https://www.merkur.de/bilder/2020/12/10/90127170/24462921-remdesivir-als-antivirales-breitspektrum-medikament-ist-ein-in-den-usa-japan-und-europa-zugelassenes-mittel-zur-behandlung-von-covid-19-patienten-1Tef.jpg",
+            "publishedAt": "2020-12-15T10:19:00Z",
+            "content": "Bislang gibt es keine Corona-Medikamente, die oral eingenommen werden können. Das könnte sich aber schon bald ändern: Forscher erproben aktuell ein neues Präparat. <ul><li>Es gibt in Deutschland bisl… [+3390 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "merkur.de"
+            },
+            "author": null,
+            "title": "Neues Corona-Medikament macht Coronaviren innerhalb von 24 Stunden unschädlich - kreiszeitung.de",
+            "description": "Bislang gibt es keine Corona-Medikamente, die oral eingenommen werden können. Das könnte sich aber schon bald ändern: Forscher erproben aktuell ein neues Präparat.",
+            "url": "https://www.merkur.de/leben/gesundheit/corona-medikament-gegen-grippe-coronaviren-uebertragung-stoppen-patienten-nicht-ansteckend-virenlast-zr-90127170.html",
+            "urlToImage": "https://www.merkur.de/bilder/2020/12/10/90127170/24462921-remdesivir-als-antivirales-breitspektrum-medikament-ist-ein-in-den-usa-japan-und-europa-zugelassenes-mittel-zur-behandlung-von-covid-19-patienten-1Tef.jpg",
+            "publishedAt": "2020-12-15T10:19:00Z",
+            "content": "Bislang gibt es keine Corona-Medikamente, die oral eingenommen werden können. Das könnte sich aber schon bald ändern: Forscher erproben aktuell ein neues Präparat. <ul><li>Es gibt in Deutschland bisl… [+3390 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Horizon-magazine.eu"
+            },
+            "author": null,
+            "title": "Q&A: How Covid-19 hijacks human cells - Horizon",
+            "description": "The virus that causes Covid-19 hijacks human cells by exploiting a ‘doorway’ that is potentially also used by other deadly viruses such as HIV, dengue and Ebola, according to recent research that may help to explain why the coronavirus is so highly infectious…",
+            "url": "https://horizon-magazine.eu/article/how-covid-19-hijacks-human-cells.html",
+            "urlToImage": "https://horizon-media.s3-eu-west-1.amazonaws.com/s3fs-public/styles/og_image/public/field/image/image-from-rawpixel.jpg?itok=eGDSeocN",
+            "publishedAt": "2020-12-15T10:16:07Z",
+            "content": "Why is the molecular biology of viruses important? \r\nIve always been interested in how cells are hijacked by viruses. When you look at a virus through a microscope, you can only see so much because t… [+6910 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Daily Mail"
+            },
+            "author": "Joe Pinkstone",
+            "title": "Apathy 'could be an early sign of dementia', study suggests - Daily Mail",
+            "description": "A Cambridge University-led study indicated that apathy - defined as a lack of interest or motivation - can begin decades before other symptoms of disease.",
+            "url": "https://www.dailymail.co.uk/sciencetech/article-9054773/Apathy-early-sign-dementia-study-suggests.html",
+            "urlToImage": "https://i.dailymail.co.uk/1s/2020/12/15/09/36861436-0-image-a-4_1608025549370.jpg",
+            "publishedAt": "2020-12-15T10:15:00Z",
+            "content": "Apathy can be an early symptom of dementia in some patients, research has suggested.\r\nA Cambridge University-led study indicated that apathy, defined as a lack of interest or motivation, can begin in… [+4769 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Daily Mail"
+            },
+            "author": "Joe Pinkstone",
+            "title": "Apathy 'could be an early sign of dementia', study suggests - Daily Mail",
+            "description": "A Cambridge University-led study indicated that apathy - defined as a lack of interest or motivation - can begin decades before other symptoms of disease.",
+            "url": "https://www.dailymail.co.uk/sciencetech/article-9054773/Apathy-early-sign-dementia-study-suggests.html",
+            "urlToImage": "https://i.dailymail.co.uk/1s/2020/12/15/09/36861436-0-image-a-4_1608025549370.jpg",
+            "publishedAt": "2020-12-15T10:15:00Z",
+            "content": "Apathy can be an early symptom of dementia in some patients, research has suggested.\r\nA Cambridge University-led study indicated that apathy, defined as a lack of interest or motivation, can begin in… [+4769 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNN Philippines"
+            },
+            "author": null,
+            "title": "London returns to strict lockdown, following a sharp rise in coronavirus cases - CNN Philippines",
+            "description": "A new variant of Covid-19 has been identified in the southeast of England, UK Health Secretary Matt Hancock said Monday, as he announced that London would return to a strict lockdown after coronavirus cases soared.",
+            "url": "http://cnnphilippines.com/world/2020/12/15/London-returns-to-strict-lockdown-sharp-rise-in-coronavirus-cases.html",
+            "urlToImage": "http://cnnphilippines.com/.imaging/mte/demo-cnn-new/750x450/dam/cnn/2020/12/15/London-England_CNNPH.jpg/jcr:content/London-England_CNNPH.jpg",
+            "publishedAt": "2020-12-15T10:10:24Z",
+            "content": "(CNN)  London will return to a strict lockdown this week, after coronavirus cases soared in the British capital, UK Health Secretary Matt Hancock said Monday.\r\nHancock said London will be moved from … [+5345 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": "https://www.facebook.com/bbcnews",
+            "title": "Covid in Scotland: Poverty linked to higher risk of death from virus - BBC News",
+            "description": "Researchers say those living in poorer areas are most likely to be severely ill with and die from the virus.",
+            "url": "https://www.bbc.com/news/uk-scotland-55309935",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/71F8/production/_116067192_gettyimages-1286130950.jpg",
+            "publishedAt": "2020-12-15T10:07:00Z",
+            "content": "image copyrightGetty Images\r\nPeople in the poorest areas are most likely to be severely ill with and die from Covid-19 than those in wealthier areas, a study has suggested. \r\nResearchers looked at al… [+2379 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "STAT"
+            },
+            "author": null,
+            "title": "Don't repeat the mistakes of past vaccine distribution supply chains - STAT",
+            "description": "Vaccine supply chains are extremely complex. How they are planned and handled can make or break Covid-19 vaccination efforts.",
+            "url": "https://www.statnews.com/2020/12/15/dont-repeat-mistakes-past-vaccine-supply-chains/",
+            "urlToImage": "https://www.statnews.com/wp-content/uploads/2020/12/GettyImages-1230114013-1024x576.jpg",
+            "publishedAt": "2020-12-15T10:04:51Z",
+            "content": "When it comes to planning how Covid-19 vaccines will be delivered to the people who need them, I hope hindsight will be used to learn from the past and the U.S. and other countries wont repeat the ma… [+12506 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Livemint"
+            },
+            "author": "PTI",
+            "title": "First 10 days after leaving hospital carry high risk for Covid patients: Study - Mint",
+            "description": "Researchers found that Covid-19 patients had a 40 to 60% higher risk of ending up back in the hospital or dying in the first 10 days, compared with similar patients treated at the same hospitals during the same months for heart failure or pneumonia",
+            "url": "https://www.livemint.com/news/business-of-life/first-10-days-after-leaving-hospital-carry-high-risk-for-covid-patients-study-11608026184542.html",
+            "urlToImage": "https://images.livemint.com/img/2020/12/15/600x338/AFP_1V824F_1594884364583_1608026438261.jpg",
+            "publishedAt": "2020-12-15T10:04:00Z",
+            "content": "WASHINGTON :\r\nThe first week and a half after leaving the hospital carry a high risk for COVID-19 patients, including trips back to the hospital, and death, according to a study.Researchers found tha… [+2267 chars]"
+        }
+    ]
+}

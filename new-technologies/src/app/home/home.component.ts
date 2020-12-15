@@ -40,19 +40,7 @@ export class HomeComponent implements OnInit {
 
   updateNews(): void {
     console.log("Updating news")
-    this.httpService.previewInformationObserver
-      .pipe(first())
-      .subscribe((value) => {
-        this.storage.setItem('articles', JSON.stringify(value));
-        this.freshData = value;
-        this.filterCategory(this.currentCategory);
-      });
-  }
-
-  ngOnInit(): void {
-    this.freshData = JSON.parse(this.storage.getItem('articles'));
-    if (this.freshData == null || this.freshData.length == 0) {
-      this.httpService
+    this.httpService
         .getPreviewInformation(true)
         .pipe(first())
         .subscribe((value) => {
@@ -60,6 +48,19 @@ export class HomeComponent implements OnInit {
           this.freshData = value;
           this.filterCategory(this.currentCategory);
         });
+    // this.httpService.previewInformationObserver
+    //   .pipe(first())
+    //   .subscribe((value) => {
+    //     this.storage.setItem('articles', JSON.stringify(value));
+    //     this.freshData = value;
+    //     this.filterCategory(this.currentCategory);
+    //   });
+  }
+
+  ngOnInit(): void {
+    this.freshData = JSON.parse(this.storage.getItem('articles'));
+    if (this.freshData == null || this.freshData.length == 0) {
+      this.updateNews()
     } else {
       this.filterCategory(this.currentCategory);
     }
