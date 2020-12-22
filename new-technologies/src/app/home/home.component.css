@@ -8,6 +8,16 @@ header img {
   position: relative;
   object-fit: cover;
 }
+
+.updateTime{
+  position: absolute;
+  top: 8vh;
+  left: 10vh;
+  font-family: RhodiumLibre;
+  color: aliceblue;
+  font-size: 14px;
+}
+
 header span {
   position: absolute;
   top: 10vh;
@@ -23,6 +33,7 @@ header span {
   top: 5vh;
   right: 10vw;
 }
+
 
 /* Border */
 ::ng-deep .search .mat-form-field-appearance-outline .mat-form-field-outline-thick {
@@ -52,7 +63,7 @@ h2 {
 }
 
 cdk-virtual-scroll-viewport {
-  height: 70vh;
+  height: 71vh;
 }
   .cards {
     width: 100%;
@@ -78,5 +89,4 @@ cdk-virtual-scroll-viewport {
   word-wrap: break-word;
   line-height: 19px;
   font-size: 15px;
-
 }

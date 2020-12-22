@@ -6,14 +6,15 @@
 </header>
 <app-category routerLink="/"></app-category>
 <div class="inborder">
-  <h1>{{data?.title}}</h1>
-
-  <p>{{data?.description}}</p>
+  <h1 [innerHTML]="data.title"></h1>
+  <p [innerHTML]="data.description"></p>
   <p>Source: {{data?.source}}</p>
   <p>
     <a href="{{data.url}}}">Link</a>
   </p>
   <p *ngIf="data.author != null">Author: {{data?.author}}</p>
-  <p>{{data?.publicationDate | date: "MM.dd.yy hh:mm" }}</p>
+  <p>{{data?.publicationDate | date: "dd.MM.yy hh:mm" }}</p>
   <p>Category: {{data?.category}}</p>
 </div>
+
+

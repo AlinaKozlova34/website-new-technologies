@@ -1,5 +1,4 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {HomeComponent} from "../home/home.component";
 import {MatTabChangeEvent} from "@angular/material/tabs";
 
 @Component({

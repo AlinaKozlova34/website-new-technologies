@@ -10,7 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { InitializerComponent } from './initializer/initializer.component';
-import { IntegrationComponent } from './integration/integration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalNewsComponent } from './modal-news/modal-news.component';
 import { Interceptor } from './interceptor/interceptor';
@@ -19,7 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {ScrollingModule} from "@angular/cdk/scrolling";
-import {ArticleService} from "./integration/services/article.service";
+import {ArticleService} from "./integration/service/article.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import {ArticleService} from "./integration/services/article.service";
     ArticlePageComponent,
     CategoriesComponent,
     InitializerComponent,
-    IntegrationComponent,
     ModalNewsComponent,
   ],
   imports: [

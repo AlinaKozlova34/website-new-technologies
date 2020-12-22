@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../integration/services/article.service'
+import { ArticleService } from '../integration/service/article.service'
 import {Interceptor} from "../interceptor/interceptor";
 
 @Component({

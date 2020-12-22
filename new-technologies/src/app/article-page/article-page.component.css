@@ -22,38 +22,12 @@ header span {
   color: aliceblue;
 }
 
-.search{
-  position: absolute;
-  top: 5vh;
-  right: 10vw;
-}
-
-/* Border */
-::ng-deep .search .mat-form-field-appearance-outline .mat-form-field-outline-thick {
-  color: white;
-}
-::ng-deep .search .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: white;
-}
-
-.search .mat-icon{
-  color: white;
-}
-
-/* Font color */
-.search input.mat-input-element {
-  color: white;
-}
-::ng-deep .search .mat-form-field-label{
-  color: white;
-  font-size: 14px;
-}
 
 h1{
   text-align: center;
   font-family: RhodiumLibre;
   color: black;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .inborder{
@@ -72,3 +46,9 @@ figure{
 font-size: 14px;
 margin: auto;
 }
+
+.color{
+  font-size: 20px;
+  color: #42306A
+}
+

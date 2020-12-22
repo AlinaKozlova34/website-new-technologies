@@ -2,6 +2,8 @@
     <div class='ng-modal-overlay' (click)="hideModal()"></div>
         <div class='ng-modal-dialog' ng-style='dialogStyle'>
         <div class='ng-modal-close' (click)="hideModal()">X</div>
-        <div class='ng-modal-dialog-content' ng-transclude><b>{{ article.title }}</b> <br> {{article.description}}</div>
+          <div class='ng-modal-dialog-content'><b>{{ article.title }}</b><br>
+          <p [innerHTML]="article.description"></p>
+        </div>
     </div>
 </div>

@@ -7,7 +7,7 @@
     <span>Browse new technologies</span>
     <div class="search">
       <mat-form-field appearance="outline">
-        <mat-label color="white">Search</mat-label>
+        <mat-label>Search</mat-label>
         <input matInput id="mat-input-search" type="text" [(ngModel)]="query" />
         <button
           mat-button
@@ -24,11 +24,12 @@
         <mat-icon>search</mat-icon>
       </button>
     </div>
+    <div class="updateTime">Last update time: {{updateDate}}</div>
   </header>
   <app-modal-news
-    [article]="modalArticle"
-    *ngIf="isModalShown"
-    (isClosed)="closeModal()"
+    [article]="modalWindowArticle"
+    *ngIf="isModalWindowShown"
+    (isClosed)="closeModalWindoq()"
   ></app-modal-news>
   <body>
     <app-category (dataChanged)="dataChangeHandler($event)" ></app-category>
@@ -43,19 +44,17 @@
         (click)="onCardClick(result)"
       >
         <div class="content">
-          <div class="header" [routerLink]="['/article', result.id]">{{ result.title }}</div>
+          <div class="header" [innerHTML]="result.title" [routerLink]="['/article', result.id]"></div>
           <div class="meta">
-            {{ result.publicationDate | date: "MM.dd.yy hh:mm" }}
+            {{ result.publicationDate | date: "dd.MM.yy hh:mm" }}
           </div>
           <div class="description" >
-            <p>
-              {{ result.description }}
+            <p [innerHTML]="result.description">
             </p>
           </div>
         </div>
       </div>
     </div>
     </cdk-virtual-scroll-viewport>
-    <!-- <app-integration></app-integration> -->
   </body>
 </html>
